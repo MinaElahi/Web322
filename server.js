@@ -1,3 +1,16 @@
+/********************************************************************************
+* WEB322 – Assignment 03
+*
+* I declare that this assignment is my own work in accordance with Seneca's
+* Academic Integrity Policy:
+*
+* https://www.senecacollege.ca/about/policies/academic-integrity-policy.html
+*
+* Name: Mina Elahi  Student ID: 183771211 Date: 2024-02-18
+*
+* Published URL: ___________________________________________________________
+*
+********************************************************************************/
 const legoData = require('./modules/legoSets');
 const express = require('express');
 const path = require('path');
