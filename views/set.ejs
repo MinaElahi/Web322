@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= obj.name %></title>
+  <link href="/css/output.css" rel="stylesheet" />
+</head>
+<body>
+  <%- include('partials/navbar', { page: '/lego/sets' }) %>
+
+  <div class="container mx-auto my-8 lg:my-16">
+    <!-- Hero Section -->
+    <div class="bg-primary text-white text-center p-8">
+      <h1 class="text-4xl font-bold mb-4"><%= obj.name %></h1>
+      <p class="text-lg mb-8">Below, you will find detailed information about the set: <%= obj.name %></p>
+    </div>
+    <!-- Card -->
+    <div class="card card-side bg-base-100 shadow-xl my-3">
+      <figure><img src="<%= obj.img_url %>" alt="<%= obj.name %>" /></figure>
+      <div class="card-body">
+        <div class="text-center">
+          <p><span class="font-bold">Year:</span> <%= obj.year %> | <span class="font-bold">Theme:</span> <%= obj.theme %></p>
+          <p><span class="font-bold">Parts:</span> <%= obj.num_parts %></p>
+        </div>
+        <div class="text-center my-6" id="quote"></div>
+        <div class="card-actions justify-center">
+          <a href="#" onclick="history.back(); return false;" class="btn btn-primary">Return</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      fetch("https://quotable.io/random")
+        .then(response => response.json())
+        .then(data => {
+          const quoteElement = document.getElementById("quote");
+          quoteElement.innerHTML = `<p>${data.content}</p><p>- ${data.author}</p>`;
+        })
+        .catch(error => console.error("Failed to fetch a quote: " + error));
+    });
+  </script>
+</body>
+</html>

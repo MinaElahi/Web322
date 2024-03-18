@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lego Set Collection</title>
+  <link href="/css/output.css" rel="stylesheet" />
+</head>
+<body>
+  <%- include('partials/navbar', { page: '/lego/sets' }) %>
+
+  <!-- Hero Section -->
+<div class="bg-primary text-white text-center p-8">
+  <h1 class="text-4xl font-bold mb-4">Collection</h1>
+  <p class="text-lg mb-8">
+    Browse the entire collection. Click the theme to filter by themes.
+  </p>
+  <div class="inline-block">
+    <a href="/lego/sets?theme=technic" class="btn btn-primary mx-2">TECHNIC</a>
+    <a href="/lego/sets?theme=classic town" class="btn btn-primary mx-2">CLASSIC TOWN</a>
+    <a href="/lego/sets?theme=supplemental" class="btn btn-primary mx-2">SUPPLEMENTAL</a>
+  </div>
+</div>
+
+  
+  
+
+  <div class="container mx-auto my-8">
+    <table class="w-full text-sm text-left text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+        <tr>
+          <th scope="col" class="py-3 px-6">Image</th>
+          <th scope="col" class="py-3 px-6">Name</th>
+          <th scope="col" class="py-3 px-6">Theme</th>
+          <th scope="col" class="py-3 px-6">Year</th>
+          <th scope="col" class="py-3 px-6">Parts</th>
+          <th scope="col" class="py-3 px-6">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% obj.forEach(s => { %>
+          <tr class="bg-white border-b">
+            <td class="py-4 px-6"><img src="<%= s.img_url %>" alt="<%= s.name %>" class="w-20 h-20 object-cover"></td>
+            <td class="py-4 px-6"><%= s.name %></td>
+            <td class="py-4 px-6"><a href="/lego/sets?theme=<%= s.theme %>" class="text-blue-600 hover:underline"><%= s.theme %></a></td>
+            <td class="py-4 px-6"><%= s.year %></td>
+            <td class="py-4 px-6"><%= s.num_parts %></td>
+            <td class="py-4 px-6"><a href="/lego/sets/<%= s.set_num %>" class="text-blue-600 hover:underline">Details</a></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

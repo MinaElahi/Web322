@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About</title>
+  
+  <link href="/css/output.css" rel="stylesheet" />
+</head>
+<body>
+  <%- include('partials/navbar', {page: '/about'}) %>
+
+
+  <div class="container mx-auto my-8 lg:my-16">
+    <!-- Hero Section -->
+    <div class="bg-primary text-white text-center  p-8">
+      <h1 class="text-4xl font-bold mb-4">About</h1>
+      <p class="text-lg mb-8">All about me!</p>
+    </div>
+
+    <!-- Grid of About Content -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+     
+      <div class="flex justify-center items-center">
+        <img src="/Mina's picture.webp" alt="Mina's Image" class="max-w-xs md:max-w-sm">
+      </div>
+    
+      <div>
+        <h2 class="text-2xl font-semibold mb-4">About Me</h2>
+        <p class="text-gray-700">
+          Hi, I'm Mina, and welcome to Assignment 4 for Web 322. Throughout this semester, I've been enhancing my skills in both Object-Oriented Programming and Database courses. These subjects have been instrumental in my journey towards becoming a proficient full-stack developer. This assignment showcases the culmination of what I've learned and how these courses have paved the way for my development in the field.
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

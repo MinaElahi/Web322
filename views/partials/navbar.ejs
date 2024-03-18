@@ -1,0 +1,50 @@
+<!--<nav>
+    <div class="navbar bg-base-100">
+      <div class="navbar-start">
+        <div class="dropdown">
+          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <li>
+              <ul>
+                <li><a class="<%= (page == '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+                <li><a class="<%= (page == 'about') ? 'active' : '' %>" href="/about">About</a></li>
+              </ul>
+              
+            </li>
+          </ul>
+        </div>
+        <a class="btn btn-ghost text-xl" href="/">Lego Collection</a>
+      </div>
+      <div class="navbar-center hidden lg:flex">
+        <ul class="menu menu-horizontal px-1"></ul>
+      </div>
+      <div class="navbar-end">
+        <a class="<%= (page == 'about') ? 'active' : '' %>" href="/about">About</a>
+      </div>
+    </div>
+  </nav>
+-->
+
+  <!-- The responsive navbar code for all of the former html (now ejs) pages (e.g. about, home, etc) localized in a partial to reduce redundancy-->
+<div class="navbar bg-base-100 p-4">
+    <div class="flex-1">
+      <a class="btn btn-ghost normal-case text-xl" href = '/' >Lego Collection</a>
+    </div>
+
+    <!--Responsive Navbar stuff-->
+    <div class="dropdown">
+        <label tabindex="0" class="btn btn-ghost sm:hidden">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+        </label>
+        <ul tabindex="0" class="menu menu-sm dropdown-content right-0 mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+          <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+          <li><a class="<%= (page == '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+        </ul>
+      </div>
+  <!--Responsive Navbar-->
+    <div class="navbar-center hidden sm:flex"> 
+      <ul class="menu menu-horizontal px-1">
+        <li><a class="<%= (page == '/about') ? 'active' : '' %>" href="/about">About</a></li>
+        <li><a class="<%= (page == '/lego/sets') ? 'active' : '' %>" href="/lego/sets">View Collection</a></li>
+      </ul>
+    </div>
+  </div>

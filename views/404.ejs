@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Not Found</title>
+    <link href="/css/output.css" rel="stylesheet" />
+  </head>
+  <body>
+    <%- include('partials/navbar', {page: ''}) %>
+
+    
+
+    <div class="container mx-auto my-8 lg:my-16">
+      <!-- 404 Hero Section -->
+      <div class="bg-primary text-center p-6 text-black">
+        <h1 class="text-4xl font-bold mb-4">404 - Not Found</h1>
+        <!-- Dynamic 404 message -->
+        <p class="text-lg mb-8"><%= message || "The page you're looking for doesn't seem to exist." %></p>
+      </div>
+
+      <!-- Optionally, 404 Image -->
+      <div class="text-center mt-8">
+        <img src="/404 error image.jpg" alt="404 Not Found" class="mx-auto max-w-md" />
+      </div>
+    </div>
+  </body>
+</html>

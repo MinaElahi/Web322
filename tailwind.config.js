@@ -1,8 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./views/**/*.{html,js}"],
-  plugins: [require("daisyui")], // DaisyUI should be included here
+  content: ["./views/**/*.ejs"], 
+  plugins: [require("daisyui")], 
   theme: {
     extend: {},
   },
+  plugins: [require('@tailwindcss/typography'), require('daisyui')],
+  daisyui: {
+    themes: ['valentine'],
+  }
 }
