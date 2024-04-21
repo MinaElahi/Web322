@@ -186,24 +186,4 @@ module.exports = { initialize, getAllSets, getSetByNum, getSetsByTheme, addSet,e
   .catch((err) => {
     console.log('Unable to connect to the database:', err);
   });*/
-  // Assuming you've already defined the Student and College models and their association
-
-
-  /// Save the senecaCollege object to the collection
-senecaCollege.save()
-.then((result) => {
-  console.log('College saved successfully:', result);
-  // Once saved, update the studentCount for Seneca College
-  return College.updateOne({ name: "Seneca College" }, { $set: { studentCount: 150000 } });
-})
-.then((updateResult) => {
-  console.log('Update operation was successful', updateResult);
-  // To get the updated document, let's find it
-  return College.findOne({ name: "Seneca College" });
-})
-.then((updatedCollege) => {
-  console.log('Updated studentCount:', updatedCollege.studentCount);
-})
-.catch((error) => {
-  console.error('Error performing operations:', error);
-});
+  
